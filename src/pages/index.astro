@@ -1,0 +1,98 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+        <ViewTransitions />
+        <style>
+            .hero {
+                padding: 3rem 1rem;
+                text-align: center;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                border-radius: 8px;
+                margin-bottom: 3rem;
+            }
+            .hero h1 {
+                font-size: 3rem;
+                margin-bottom: 1rem;
+            }
+            .hero p {
+                font-size: 1.25rem;
+                opacity: 0.9;
+            }
+            .intro {
+                max-width: 800px;
+                margin: 0 auto 3rem;
+                font-size: 1.1rem;
+                line-height: 1.8;
+            }
+            .stats {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1.5rem;
+                max-width: 800px;
+                margin: 0 auto 3rem;
+            }
+            .stat-card {
+                background: rgb(var(--gray-light));
+                padding: 1.5rem;
+                border-radius: 8px;
+                text-align: center;
+            }
+            .stat-number {
+                font-size: 2rem;
+                font-weight: bold;
+                color: rgb(var(--accent));
+            }
+        </style>
+    </head>
+    <body>
+        <Header />
+        <main>
+            <div class="hero">
+                <h1>Hi! I'm Phyo Thant (Patrick)</h1>
+                <p>Passionate problem-solver specializing in Backend Development, Network Systems, and Robotics</p>
+            </div>
+
+            <section class="intro">
+                <p>
+                    I'm currently pursuing my <strong>B.S. in Computer Science</strong> at UC San Diego. 
+                    My development philosophy focuses on writing clean, maintainable, and unbreakable code 
+                    with a strong emphasis on user-centered design.
+                </p>
+                <p>
+                    I'm in pursuit of <strong>continuous learning</strong>, constantly evolving through 
+                    modern development practices and real-world problem solving.
+                </p>
+            </section>
+
+            <section class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">3+</div>
+                    <div>Years Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">7+</div>
+                    <div>Projects</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">70+</div>
+                    <div>LeetCode Solved</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">300+</div>
+                    <div>Students Mentored</div>
+                </div>
+            </section>
+        </main>
+        <Footer />
+    </body>
+</html>
